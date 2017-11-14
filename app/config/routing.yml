@@ -1,0 +1,7 @@
+go_voyage:
+    resource: "@GoVoyageBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

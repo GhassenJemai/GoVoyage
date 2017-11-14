@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Vols list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Numticket</th>
+                <th>Datedepart</th>
+                <th>Datearrivee</th>
+                <th>Prixvol</th>
+                <th>Nomvol</th>
+                <th>Depart</th>
+                <th>Arrivee</th>
+                <th>Nomcompagnie</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for vol in vols %}
+            <tr>
+                <td><a href="{{ path('vol_show', { 'numticket': vol.numticket }) }}">{{ vol.numticket }}</a></td>
+                <td>{% if vol.dateDepart %}{{ vol.dateDepart|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if vol.dateArrivee %}{{ vol.dateArrivee|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ vol.prixVol }}</td>
+                <td>{{ vol.nomVol }}</td>
+                <td>{{ vol.depart }}</td>
+                <td>{{ vol.arrivee }}</td>
+                <td>{{ vol.nomCompagnie }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('vol_show', { 'numticket': vol.numticket }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('vol_edit', { 'numticket': vol.numticket }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('vol_new') }}">Create a new vol</a>
+        </li>
+    </ul>
+{% endblock %}

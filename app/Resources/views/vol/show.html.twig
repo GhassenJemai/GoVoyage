@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Vol</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Numticket</th>
+                <td>{{ vol.numticket }}</td>
+            </tr>
+            <tr>
+                <th>Datedepart</th>
+                <td>{% if vol.dateDepart %}{{ vol.dateDepart|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Datearrivee</th>
+                <td>{% if vol.dateArrivee %}{{ vol.dateArrivee|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Prixvol</th>
+                <td>{{ vol.prixVol }}</td>
+            </tr>
+            <tr>
+                <th>Nomvol</th>
+                <td>{{ vol.nomVol }}</td>
+            </tr>
+            <tr>
+                <th>Depart</th>
+                <td>{{ vol.depart }}</td>
+            </tr>
+            <tr>
+                <th>Arrivee</th>
+                <td>{{ vol.arrivee }}</td>
+            </tr>
+            <tr>
+                <th>Nomcompagnie</th>
+                <td>{{ vol.nomCompagnie }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('vol_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('vol_edit', { 'numticket': vol.numticket }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

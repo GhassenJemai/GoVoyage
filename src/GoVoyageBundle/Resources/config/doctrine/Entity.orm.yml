@@ -1,0 +1,11 @@
+GoVoyageBundle\Entity\Entity:
+    type: entity
+    table: null
+    repositoryClass: GoVoyageBundle\Repository\EntityRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    lifecycleCallbacks: {  }

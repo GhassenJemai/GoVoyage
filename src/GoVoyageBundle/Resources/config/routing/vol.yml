@@ -1,0 +1,24 @@
+vol_index:
+    path:     /
+    defaults: { _controller: "GoVoyageBundle:Vol:index" }
+    methods:  GET
+
+vol_show:
+    path:     /{numticket}/show
+    defaults: { _controller: "GoVoyageBundle:Vol:show" }
+    methods:  GET
+
+vol_new:
+    path:     /new
+    defaults: { _controller: "GoVoyageBundle:Vol:new" }
+    methods:  [GET, POST]
+
+vol_edit:
+    path:     /{numticket}/edit
+    defaults: { _controller: "GoVoyageBundle:Vol:edit" }
+    methods:  [GET, POST]
+
+vol_delete:
+    path:     /{numticket}/delete
+    defaults: { _controller: "GoVoyageBundle:Vol:delete" }
+    methods:  DELETE

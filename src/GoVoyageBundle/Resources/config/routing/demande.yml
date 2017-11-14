@@ -1,0 +1,24 @@
+demande_index:
+    path:     /
+    defaults: { _controller: "GoVoyageBundle:Demande:index" }
+    methods:  GET
+
+demande_show:
+    path:     /{idVpFk}/show
+    defaults: { _controller: "GoVoyageBundle:Demande:show" }
+    methods:  GET
+
+demande_new:
+    path:     /new
+    defaults: { _controller: "GoVoyageBundle:Demande:new" }
+    methods:  [GET, POST]
+
+demande_edit:
+    path:     /{idVpFk}/edit
+    defaults: { _controller: "GoVoyageBundle:Demande:edit" }
+    methods:  [GET, POST]
+
+demande_delete:
+    path:     /{idVpFk}/delete
+    defaults: { _controller: "GoVoyageBundle:Demande:delete" }
+    methods:  DELETE
